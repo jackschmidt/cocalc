@@ -55,5 +55,6 @@ fi
 
 popd
 
-becho "Restart terminal"
-exec bash
+becho "Reload .bashrc"
+source ~/.bashrc
+
