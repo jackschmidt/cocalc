@@ -14,7 +14,7 @@ SILENT_LOG=/tmp/silent_log_$$.txt
 trap "/bin/rm -f $SILENT_LOG" EXIT
 
 function report_and_exit {
-    echo " ... ${redbold} error!${normal}"
+    echo " ... ${redbold}error!${normal}"
     cat "${SILENT_LOG}";
 }
 
