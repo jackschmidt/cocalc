@@ -1,6 +1,3 @@
-[submodule "ximeraLatex"]
-	path = texmf/tex/latex/ximeraLatex
-	url = https://github.com/XimeraProject/ximeraLatex.git
 [submodule "xandbox"]
 	path = xandbox
 	url = https://github.com/xandbox/xandbox.git
