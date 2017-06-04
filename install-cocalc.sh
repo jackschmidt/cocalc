@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 bold=$(tput bold)
 redbold=${bold}$(tput setaf 1)
@@ -56,5 +56,5 @@ fi
 popd
 
 becho "Reload bash"
-exec bash
+source ~/.bashrc
 
