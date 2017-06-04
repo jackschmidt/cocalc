@@ -8,9 +8,10 @@ One easy way to get started with Ximera is to use CoCalc (formerly SageMathCloud
 2. In your newly created project, click on the large "Create or Upload Files" button.
 3. From among the options, choose "Terminal" to create a terminal where you will be able to enter commands.
 4. Wait for the terminal to open.
-4. In the terminal, run the command
+4. In the terminal, run the two commands
 ```
-curl -L https://go.osu.edu/ximera-cocalc | source /dev/stdin
+curl -OL http://xandbox.github.io/cocalc/install.sh
+source install.sh
 ```
 This will populate your CoCalc project with the files necessary to use Ximera.
 5. Click on "Files" to view the files that have been downloaded into your project.
