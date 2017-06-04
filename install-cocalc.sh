@@ -8,7 +8,7 @@ becho () {
 }
 
 echo
-becho "Configure git..."
+becho "Configure git"
 git config --global push.default simple
 
 echo
@@ -21,11 +21,12 @@ git reset --hard origin/master
 
 echo
 becho "Clone the git submodules"
-git submodule update --init
+git submodule update --init --remote
 popd
 
+echo
 becho "Import the xandbox private key"
-curl https://cocalc.com/7d63099a-8c85-4571-9562-660769ef0cce/raw/gpg/xandbox.txt | gpg --import
+gpg --import ~/gpg/xandbox.txt
 
 pushd ~/xandbox
 if [[ $(git config user.name) ]]; then
