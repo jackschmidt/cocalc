@@ -20,6 +20,7 @@ function report_and_exit {
 
 function silent {
     echo -ne $*
+    rm -f ${SILENT_LOG}
     $* 2>>"${SILENT_LOG}" >> "${SILENT_LOG}" && echo " ... done." || report_and_exit;
 }
 
