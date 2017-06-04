@@ -1,5 +1,12 @@
 #! /bin/bash
 
+bold=$(tput bold)
+redbold=${bold}$(tput setaf 1)
+normal=$(tput sgr0)
+becho () {
+    echo ${bold}$*${normal}
+}
+
 # From https://serverfault.com/questions/607884/hide-the-output-of-a-shell-command-only-on-success
 set -e
 
@@ -7,20 +14,13 @@ SILENT_LOG=/tmp/silent_log_$$.txt
 trap "/bin/rm -f $SILENT_LOG" EXIT
 
 function report_and_exit {
+    echo "... ${redbold} error!${normal}"
     cat "${SILENT_LOG}";
-    echo "\033[91mError running command.\033[39m"
-    exit 1;
 }
 
 function silent {
     echo -ne $*
-    $* 2>>"${SILENT_LOG}" >> "${SILENT_LOG}" && echo -ne " ... done!" || report_and_exit;
-}
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-becho () {
-    echo ${bold}$*${normal}
+    $* 2>>"${SILENT_LOG}" >> "${SILENT_LOG}" && echo " ... done." || report_and_exit;
 }
 
 pushd ~ 
