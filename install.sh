@@ -38,6 +38,9 @@ silent git reset --hard origin/master
 becho "Clone the git submodules"
 silent git submodule update --init --remote
 
+becho "Clone the xandbox itself"
+silent git clone https://github.com/xandbox/xandbox.git
+
 popd
 
 becho "Import the xandbox private key"
